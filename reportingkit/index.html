@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Reporting Kit — Reports QM by Miruna Groza</title>
+  <meta name="description" content="Reports QM is a multi-tenant SaaS platform for property managers. Centralize reservation data, track financials, and give partners real-time visibility — all in one platform." />
+  <meta name="keywords" content="property management reporting, Airbnb reporting tool, short-term rental analytics, revenue dashboard, partner portal, Romania, Barcelona" />
+  <meta property="og:title" content="Property Reporting Kit — Reports QM" />
+  <meta property="og:description" content="Financial reporting, expense tracking, and partner portals for short-term rental operators." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">MG</a>
+      <ul class="nav-links">
+        <li><a href="../#work">Work</a></li>
+        <li><a href="../#about">About</a></li>
+        <li><a href="../#products">Products</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact" class="nav-cta">Get access</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="../#work" class="mobile-link">Work</a>
+      <a href="../#about" class="mobile-link">About</a>
+      <a href="../#products" class="mobile-link">Products</a>
+      <a href="#pricing" class="mobile-link">Pricing</a>
+      <a href="#contact" class="mobile-link">Get access</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="rk-hero">
+    <div class="rk-hero-bg"></div>
+    <div class="rk-hero-grid">
+      <div class="rk-hero-content">
+        <div class="rk-eyebrow reveal delay-1">
+          <span class="rk-badge">Reports QM</span>
+          <span class="rk-sep">✦</span>
+          <span class="rk-badge-sub">Property Reporting Kit</span>
+        </div>
+        <h1 class="rk-hero-headline reveal delay-2">
+          Financial clarity<br />for property<br /><em>managers.</em>
+        </h1>
+        <p class="rk-hero-sub reveal delay-3">
+          One platform. Every booking channel. Real-time<br />financials your partners can actually trust.
+        </p>
+        <div class="rk-hero-actions reveal delay-3">
+          <a href="#contact" class="btn-primary" id="hero-get-access-btn">Get access →</a>
+          <a href="#features" class="btn-ghost" id="hero-see-features-btn">See what's included</a>
+        </div>
+        <div class="rk-hero-stats reveal delay-3">
+          <div class="rk-stat">
+            <span class="rk-stat-num">Multiple</span>
+            <span class="rk-stat-label">Booking Platforms</span>
+          </div>
+          <div class="rk-stat-divider"></div>
+          <div class="rk-stat">
+            <span class="rk-stat-num">Multiple</span>
+            <span class="rk-stat-label">User Roles</span>
+          </div>
+          <div class="rk-stat-divider"></div>
+          <div class="rk-stat">
+            <span class="rk-stat-num">Infinite</span>
+            <span class="rk-stat-label">Properties</span>
+          </div>
+        </div>
+      </div>
+      <div class="rk-hero-visual reveal delay-2">
+        <div class="rk-dashboard-mock">
+          <div class="rk-mock-header">
+            <div class="rk-mock-dot"></div>
+            <div class="rk-mock-dot"></div>
+            <div class="rk-mock-dot"></div>
+            <span class="rk-mock-title">Reports QM — Dashboard</span>
+          </div>
+          <div class="rk-mock-body">
+            <div class="rk-mock-row">
+              <div class="rk-mock-kpi">
+                <span class="rk-mock-kpi-label">Total Revenue</span>
+                <span class="rk-mock-kpi-val">€ 38,412</span>
+                <span class="rk-mock-kpi-badge up">↑ 14% vs last month</span>
+              </div>
+              <div class="rk-mock-kpi">
+                <span class="rk-mock-kpi-label">Net Profit</span>
+                <span class="rk-mock-kpi-val">€ 21,870</span>
+                <span class="rk-mock-kpi-badge up">↑ 9%</span>
+              </div>
+              <div class="rk-mock-kpi">
+                <span class="rk-mock-kpi-label">Expenses</span>
+                <span class="rk-mock-kpi-val">€ 16,542</span>
+                <span class="rk-mock-kpi-badge down">↓ 3%</span>
+              </div>
+            </div>
+            <div class="rk-mock-chart-label">Monthly Revenue — All Properties</div>
+            <div class="rk-mock-chart">
+              <div class="rk-bar" style="height:42%"><span>Jan</span></div>
+              <div class="rk-bar" style="height:61%"><span>Feb</span></div>
+              <div class="rk-bar" style="height:55%"><span>Mar</span></div>
+              <div class="rk-bar" style="height:78%"><span>Apr</span></div>
+              <div class="rk-bar" style="height:69%"><span>May</span></div>
+              <div class="rk-bar rk-bar-active" style="height:90%"><span>Jun</span></div>
+              <div class="rk-bar" style="height:82%"><span>Jul</span></div>
+            </div>
+            <div class="rk-mock-table">
+              <div class="rk-mock-th">
+                <span>Property</span>
+                <span>Source</span>
+                <span>Revenue</span>
+                <span>Status</span>
+              </div>
+              <div class="rk-mock-tr">
+                <span>Apt. Floreasca 12</span>
+                <span class="rk-source airbnb">Airbnb</span>
+                <span>€ 4,200</span>
+                <span class="rk-status confirmed">Confirmed</span>
+              </div>
+              <div class="rk-mock-tr">
+                <span>Villa Barceloneta</span>
+                <span class="rk-source booking">Booking.com</span>
+                <span>€ 7,850</span>
+                <span class="rk-status confirmed">Confirmed</span>
+              </div>
+              <div class="rk-mock-tr">
+                <span>Studio Dorobanți</span>
+                <span class="rk-source direct">Direct</span>
+                <span>€ 1,920</span>
+                <span class="rk-status pending">Pending</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <span>Airbnb CSV Import</span>
+      <span class="dot">✦</span>
+      <span>Booking.com Sync</span>
+      <span class="dot">✦</span>
+      <span>Partner Portal</span>
+      <span class="dot">✦</span>
+      <span>Revenue Dashboards</span>
+      <span class="dot">✦</span>
+      <span>Expense Tracking</span>
+      <span class="dot">✦</span>
+      <span>Multi-currency</span>
+      <span class="dot">✦</span>
+      <span>Audit Logging</span>
+      <span class="dot">✦</span>
+      <span>Multi-tenant SaaS</span>
+      <span class="dot">✦</span>
+      <span>Airbnb CSV Import</span>
+      <span class="dot">✦</span>
+      <span>Booking.com Sync</span>
+      <span class="dot">✦</span>
+      <span>Partner Portal</span>
+      <span class="dot">✦</span>
+      <span>Revenue Dashboards</span>
+      <span class="dot">✦</span>
+      <span>Expense Tracking</span>
+      <span class="dot">✦</span>
+      <span>Multi-currency</span>
+      <span class="dot">✦</span>
+      <span>Audit Logging</span>
+      <span class="dot">✦</span>
+      <span>Multi-tenant SaaS</span>
+      <span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- WHAT IT SOLVES -->
+  <section class="rk-problem">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">The Problem</div>
+        <h2 class="section-title">Managing properties<br />shouldn't mean<br /><em>managing spreadsheets.</em></h2>
+      </div>
+      <div class="rk-problem-grid">
+        <div class="rk-problem-card reveal">
+          <div class="rk-problem-icon">⊘</div>
+          <h3>Data scattered everywhere</h3>
+          <p>Airbnb exports, Booking.com PDFs, manual notes — no single source of truth for your numbers.</p>
+        </div>
+        <div class="rk-problem-card reveal delay-1">
+          <div class="rk-problem-icon">⊘</div>
+          <h3>Partners asking for reports</h3>
+          <p>Property owners want monthly breakdowns. You spend hours formatting files instead of operating.</p>
+        </div>
+        <div class="rk-problem-card reveal delay-2">
+          <div class="rk-problem-icon">⊘</div>
+          <h3>No visibility across properties</h3>
+          <p>When you manage multiple listings across cities, tracking performance is a full-time job on its own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="rk-features">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Platform Features</div>
+        <h2 class="section-title">Everything a property<br />management operation needs.</h2>
+      </div>
+      <div class="rk-features-grid">
+
+        <div class="rk-feature-card rk-feature-large reveal">
+          <div class="rk-feature-num">01</div>
+          <div class="rk-feature-icon-lg">📊</div>
+          <h3 class="rk-feature-title">Reports &amp; Analytics</h3>
+          <p class="rk-feature-desc">Monthly and annual revenue dashboards with profit breakdowns. Visual charts per property and per legal entity. Filterable, exportable, reliable.</p>
+          <ul class="rk-feature-list">
+            <li>Monthly P&amp;L per property</li>
+            <li>Annual performance comparisons</li>
+            <li>Revenue charts by entity</li>
+            <li>Occupancy rate tracking</li>
+          </ul>
+        </div>
+
+        <div class="rk-feature-card reveal delay-1">
+          <div class="rk-feature-num">02</div>
+          <h3 class="rk-feature-title">CSV Import Engine</h3>
+          <p class="rk-feature-desc">Auto-detects Airbnb and Booking.com export formats. Import thousands of reservations in seconds.</p>
+          <ul class="rk-feature-list">
+            <li>Airbnb CSV parser</li>
+            <li>Booking.com auto-detection</li>
+            <li>Duplicate handling</li>
+          </ul>
+        </div>
+
+        <div class="rk-feature-card reveal delay-2">
+          <div class="rk-feature-num">03</div>
+          <h3 class="rk-feature-title">Partner Portal</h3>
+          <p class="rk-feature-desc">A dedicated login for property owners. They see only their properties, their numbers — no configuration needed from you.</p>
+          <ul class="rk-feature-list">
+            <li>Separate owner login</li>
+            <li>Scoped data access</li>
+            <li>Read-only dashboards</li>
+          </ul>
+        </div>
+
+        <div class="rk-feature-card reveal">
+          <div class="rk-feature-num">04</div>
+          <h3 class="rk-feature-title">Expense Management</h3>
+          <p class="rk-feature-desc">Log and categorize expenses per property. Supports RON and EUR. Link contracts directly to expense records.</p>
+          <ul class="rk-feature-list">
+            <li>Categorized expenses</li>
+            <li>RON / EUR support</li>
+            <li>Contract attachments</li>
+          </ul>
+        </div>
+
+        <div class="rk-feature-card reveal delay-1">
+          <div class="rk-feature-num">05</div>
+          <h3 class="rk-feature-title">Reservation Management</h3>
+          <p class="rk-feature-desc">View, filter, and manage all bookings across channels and properties in a single unified view.</p>
+          <ul class="rk-feature-list">
+            <li>All channels, one view</li>
+            <li>Manual booking entry</li>
+            <li>Blocked dates management</li>
+          </ul>
+        </div>
+
+        <div class="rk-feature-card reveal delay-2">
+          <div class="rk-feature-num">06</div>
+          <h3 class="rk-feature-title">Roles &amp; Permissions</h3>
+          <p class="rk-feature-desc">Multi-role access control built in. Super Admins, Admins, Operators, and Partners each see exactly what they should.</p>
+          <ul class="rk-feature-list">
+            <li>Super Admin &amp; Admin roles</li>
+            <li>Operator restricted access</li>
+            <li>Audit logging</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="rk-how">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Set up in a day.<br />Run for years.</h2>
+      </div>
+      <div class="rk-steps">
+        <div class="rk-step reveal">
+          <div class="rk-step-num">I</div>
+          <div class="rk-step-body">
+            <h4>We onboard your properties</h4>
+            <p>We set up your project, create user accounts, and configure your property portfolio in the platform.</p>
+          </div>
+        </div>
+        <div class="rk-step-connector"></div>
+        <div class="rk-step reveal delay-1">
+          <div class="rk-step-num">II</div>
+          <div class="rk-step-body">
+            <h4>Import your historical data</h4>
+            <p>Upload your existing CSVs from Airbnb and Booking.com. The platform parses and consolidates everything automatically.</p>
+          </div>
+        </div>
+        <div class="rk-step-connector"></div>
+        <div class="rk-step reveal delay-2">
+          <div class="rk-step-num">III</div>
+          <div class="rk-step-body">
+            <h4>Invite your partners</h4>
+            <p>Property owners get their own login and can access their reports from day one — no calls, no PDFs.</p>
+          </div>
+        </div>
+        <div class="rk-step-connector"></div>
+        <div class="rk-step reveal delay-3">
+          <div class="rk-step-num">IV</div>
+          <div class="rk-step-body">
+            <h4>Manage and grow</h4>
+            <p>Add bookings, track expenses, pull reports. The platform runs your reporting operation so you don't have to.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ROLES -->
+  <section class="rk-roles">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">User Roles</div>
+        <h2 class="section-title">Built for teams.<br />Scaled for operators.</h2>
+      </div>
+      <div class="rk-roles-grid">
+        <div class="rk-role-card reveal">
+          <div class="rk-role-icon">◈</div>
+          <div class="rk-role-tag">Super Admin</div>
+          <h3 class="rk-role-title">Full Control</h3>
+          <p>Access to all projects, properties, settings, and user management. The platform owner's seat.</p>
+        </div>
+        <div class="rk-role-card reveal delay-1">
+          <div class="rk-role-icon">◇</div>
+          <div class="rk-role-tag">Admin</div>
+          <h3 class="rk-role-title">Project Management</h3>
+          <p>Manage properties, reservations, expenses, and reports at the project level.</p>
+        </div>
+        <div class="rk-role-card reveal delay-2">
+          <div class="rk-role-icon">◻</div>
+          <div class="rk-role-tag">Operator</div>
+          <h3 class="rk-role-title">Restricted Operations</h3>
+          <p>Day-to-day operational access with a managed, restricted data view. Ideal for on-the-ground teams.</p>
+        </div>
+        <div class="rk-role-card reveal delay-3">
+          <div class="rk-role-icon">○</div>
+          <div class="rk-role-tag">Partner / Owner</div>
+          <h3 class="rk-role-title">Owner Portal</h3>
+          <p>Dedicated read-only portal. Partners see only their properties and monthly financials — nothing else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="rk-pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">Simple, transparent,<br />built to scale with you.</h2>
+      </div>
+      <div class="rk-pricing-grid">
+
+        <div class="rk-pricing-card reveal">
+          <div class="rk-pricing-tag">Starter</div>
+          <div class="rk-pricing-price">
+            <span class="rk-price-currency">€</span>
+            <span class="rk-price-num">149</span>
+            <span class="rk-price-period">/ month</span>
+          </div>
+          <p class="rk-pricing-desc">For operators getting started with structured reporting.</p>
+          <ul class="rk-pricing-features">
+            <li>Up to 5 properties</li>
+            <li>Airbnb &amp; Booking.com import</li>
+            <li>Monthly P&amp;L reports</li>
+            <li>Expense management</li>
+            <li>Property Owner Portal</li>
+            <li>All user roles included</li>
+            <li>Email support</li>
+          </ul>
+          <a href="#contact" class="btn-ghost btn-full" id="starter-cta-btn">Get started →</a>
+        </div>
+
+        <div class="rk-pricing-card rk-pricing-featured reveal delay-1">
+          <div class="rk-pricing-popular">Most Popular</div>
+          <div class="rk-pricing-tag">Growth</div>
+          <div class="rk-pricing-price">
+            <span class="rk-price-currency">€</span>
+            <span class="rk-price-num">299</span>
+            <span class="rk-price-period">/ month</span>
+          </div>
+          <p class="rk-pricing-desc">Everything in Starter, built for larger portfolios.</p>
+          <ul class="rk-pricing-features">
+            <li>Up to 20 properties</li>
+            <li>Airbnb &amp; Booking.com import</li>
+            <li>Monthly P&amp;L reports</li>
+            <li>Expense management</li>
+            <li>Property Owner Portal</li>
+            <li>All user roles included</li>
+            <li>Contract storage</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#contact" class="btn-primary btn-full" id="growth-cta-btn">Get started →</a>
+        </div>
+
+        <div class="rk-pricing-card reveal delay-2">
+          <div class="rk-pricing-tag">Scale</div>
+          <div class="rk-pricing-price">
+            <span class="rk-price-currency">€</span>
+            <span class="rk-price-num">Custom</span>
+          </div>
+          <p class="rk-pricing-desc">For large portfolios or agencies requiring custom configuration and SLAs.</p>
+          <ul class="rk-pricing-features">
+            <li>Unlimited properties</li>
+            <li>Unlimited users</li>
+            <li>Custom integrations</li>
+            <li>White-label option</li>
+            <li>Dedicated onboarding</li>
+            <li>SLA &amp; dedicated support</li>
+          </ul>
+          <a href="#contact" class="btn-ghost btn-full" id="scale-cta-btn">Talk to us →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section class="rk-integrations">
+    <div class="container">
+      <div class="rk-integrations-inner reveal">
+        <div class="section-label">Integrations</div>
+        <h2 class="rk-integrations-title">Connects to the platforms<br />you already use.</h2>
+        <div class="rk-integrations-grid">
+
+          <div class="rk-integration-card">
+            <div class="rk-integration-logo">
+              <span class="rk-integ-wordmark" style="color:#FF5A5F;">Airbnb</span>
+            </div>
+            <p>Import reservation and payout data directly from your Airbnb CSV exports. Auto-parsed and categorised instantly.</p>
+            <div class="rk-integration-badge" style="color:#FF5A5F;border-color:rgba(255,90,95,0.25)">CSV Import</div>
+          </div>
+
+          <div class="rk-integration-card">
+            <div class="rk-integration-logo">
+              <span class="rk-integ-wordmark"><span style="color:#6ba4ff;">Booking</span><span style="color:rgba(107,164,255,0.55);">.com</span></span>
+            </div>
+            <p>Smart detection for Booking.com export formats. All reservation data consolidated with your other channels.</p>
+            <div class="rk-integration-badge" style="color:#6ba4ff;border-color:rgba(107,164,255,0.25)">CSV Import</div>
+          </div>
+
+          <div class="rk-integration-card">
+            <div class="rk-integration-logo">
+              <span class="rk-integ-wordmark" style="color:#c9aa71;">Direct</span>
+            </div>
+            <p>Manually log direct bookings. Same financial tracking, same reporting — everything in one unified view.</p>
+            <div class="rk-integration-badge" style="color:#c9aa71;border-color:rgba(201,170,113,0.25)">Manual Entry</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="rk-cta-band">
+    <div class="rk-cta-grid reveal">
+      <div class="rk-cta-text">
+        <p class="cta-eyebrow">Ready when you are</p>
+        <h2 class="cta-headline">Stop managing reports.<br />Start running your business.</h2>
+      </div>
+      <a href="#contact" id="cta-band-btn" class="btn-primary btn-large">Get the Reporting Kit →</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <div class="section-label">Get Access</div>
+        <h2 class="section-title">Let's get you set up.</h2>
+        <p class="contact-body">
+          Tell us about your property portfolio and we'll get you onboarded — usually within 48 hours.
+        </p>
+        <div class="contact-details">
+          <a href="mailto:contact@mirunagroza.com" class="contact-detail" id="rk-email-link">
+            <span class="detail-icon">✉</span>
+            contact@mirunagroza.com
+          </a>
+
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal delay-1">
+        <form class="contact-form" id="rk-contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="rk-fname">Name</label>
+              <input type="text" id="rk-fname" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="rk-femail">Email</label>
+              <input type="email" id="rk-femail" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rk-fplan">Which plan interests you?</label>
+            <select id="rk-fplan" name="plan">
+              <option value="">Select a plan</option>
+              <option value="starter">Starter — €149/mo</option>
+              <option value="growth">Growth — €299/mo</option>
+              <option value="scale">Scale — Custom</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="rk-fproperties">How many properties do you manage?</label>
+            <select id="rk-fproperties" name="properties">
+              <option value="">Select range</option>
+              <option value="1-5">1–5 properties</option>
+              <option value="6-20">6–20 properties</option>
+              <option value="20+">20+ properties</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="rk-fmessage">Tell me more</label>
+            <textarea id="rk-fmessage" name="message" rows="4" placeholder="What channels do you use? Where are your properties located?"></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full" id="rk-form-submit-btn">Request access</button>
+          <div id="rk-form-success" class="form-success hidden">
+            ✦ Request received — we'll be in touch within 48 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">Miruna Groza</div>
+      <div class="footer-ventures">
+        <a href="../" style="color:inherit;opacity:0.5;text-decoration:none;">mirunagroza.com</a>
+        <span class="sep">·</span>
+        <span>Quantum Monetise</span>
+        <span class="sep">·</span>
+        <span>Reports QM</span>
+      </div>
+      <p class="footer-copy">© 2026 Miruna Groza. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
