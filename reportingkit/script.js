@@ -88,20 +88,51 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---- CONTACT FORM ----
-  window.handleSubmit = (e) => {
+  window.handleSubmit = async (e) => {
     e.preventDefault();
-    const form = e.target;
-    const btn = form.querySelector('[id$="-form-submit-btn"]') || form.querySelector('button[type="submit"]');
+    const form    = e.target;
+    const btn     = form.querySelector('[id$="-form-submit-btn"]') || form.querySelector('button[type="submit"]');
     const success = form.querySelector('[id$="-form-success"]') || form.querySelector('.form-success');
-    if (btn) {
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-    }
-    setTimeout(() => {
+    const errorEl = form.querySelector('.form-error');
+
+    const name       = (form.querySelector('[name="name"]') || {}).value?.trim() || '';
+    const email      = (form.querySelector('[name="email"]') || {}).value?.trim() || '';
+    const message    = (form.querySelector('[name="message"]') || {}).value?.trim() || '';
+    const plan       = (form.querySelector('[name="plan"]') || {}).value || '';
+    const properties = (form.querySelector('[name="properties"]') || {}).value || '';
+
+    if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
+    if (errorEl) errorEl.classList.add('hidden');
+
+    const details = [plan && `Plan: ${plan}`, properties && `Properties: ${properties}`]
+      .filter(Boolean).join('\n');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key:          WEB3FORMS_KEY,
+          name,
+          email,
+          message:             details ? `${details}\n\n${message}` : message,
+          subject:             `Property Reporting Kit inquiry from ${name}`,
+          autoresponse:        true,
+          autoresponse_subject:'Got your inquiry — Property Reporting Kit',
+          autoresponse_message:`Hi ${name},\n\nThanks for your interest in the Property Reporting Kit! I've received your inquiry and will get back to you within 48 hours.\n\n— Miruna`,
+        }),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message);
+
       form.reset();
       if (btn) btn.style.display = 'none';
       if (success) success.classList.remove('hidden');
-    }, 1200);
+    } catch (err) {
+      console.error('Web3Forms error:', err);
+      if (btn) { btn.textContent = 'Request access'; btn.disabled = false; }
+      if (errorEl) errorEl.classList.remove('hidden');
+    }
   };
 
   // ---- CURSOR TRAIL (desktop only) ----

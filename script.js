@@ -46,18 +46,50 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 100);
 
   // ---- CONTACT FORM ----
-  window.handleSubmit = (e) => {
+  window.handleSubmit = async (e) => {
     e.preventDefault();
-    const btn = document.getElementById('form-submit-btn');
+    const form    = document.getElementById('contact-form');
+    const btn     = document.getElementById('form-submit-btn');
     const success = document.getElementById('form-success');
-    btn.textContent = 'Sending...';
+    const errorEl = document.getElementById('form-error');
+
+    const name    = form.querySelector('[name="name"]').value.trim();
+    const email   = form.querySelector('[name="email"]').value.trim();
+    const message = form.querySelector('[name="message"]').value.trim();
+    const service = (form.querySelector('[name="service"]') || {}).value || '';
+
+    btn.textContent = 'Sending…';
     btn.disabled = true;
-    // Simulate send
-    setTimeout(() => {
-      document.getElementById('contact-form').reset();
+    if (errorEl) errorEl.classList.add('hidden');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key:          WEB3FORMS_KEY,
+          name,
+          email,
+          message:             service ? `[${service}]\n\n${message}` : message,
+          subject:             `New inquiry from ${name}`,
+          // Auto-reply to the submitter
+          autoresponse:        true,
+          autoresponse_subject:'Got your message — Miruna Groza',
+          autoresponse_message:`Hi ${name},\n\nThanks for reaching out! I've received your inquiry and will get back to you within 48 hours.\n\n— Miruna`,
+        }),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message);
+
+      form.reset();
       btn.style.display = 'none';
       success.classList.remove('hidden');
-    }, 1200);
+    } catch (err) {
+      console.error('Web3Forms error:', err);
+      btn.textContent = 'Send message';
+      btn.disabled = false;
+      if (errorEl) errorEl.classList.remove('hidden');
+    }
   };
 
   // ---- SMOOTH ACTIVE NAV LINKS ----
