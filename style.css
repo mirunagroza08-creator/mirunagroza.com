@@ -1009,6 +1009,7 @@ ul { list-style: none; }
   .identity-image { aspect-ratio: 4/5; }
   .why-grid { grid-template-columns: 1fr; gap: 48px; }
   .why-image { order: -1; aspect-ratio: 4/5; }
+  .why-image img { object-position: top; }
   .process-steps { flex-direction: column; gap: 40px; }
   .process-connector { width: 1px; height: 32px; }
   .products-grid { grid-template-columns: 1fr; }
